@@ -11,13 +11,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<String> strings = new ArrayList<>();
-        for (int i = 0; i <= 100 ; i++) {
-            strings.add(String.valueOf(i));
-        }
-
         try {
-            Files.write(Path.of("data/test.txt"), strings);
+            Files.copy(Path.of("data/test.txt"), Path.of("data/test/"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
