@@ -12,8 +12,12 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            Files.walk(Path.of("D:\\Projects\\git\\Lesson 28 Files"))
-                    .map(p -> p.toFile()).filter(f -> f.isFile()).forEach(f -> System.out.println(f));
+            long sum = Files.walk(Path.of("D:\\Projects\\git\\Lesson 28 Files"))
+                    .map(p -> p.toFile())
+                    .filter(f -> f.isFile())
+                    .mapToLong(f -> f.length()).sum();
+            System.out.println(sum);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
