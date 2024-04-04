@@ -4,13 +4,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("D:\\Projects\\git\\Lesson 28 Files\\data\\test\\test.txt");
-        try {
-            file.createNewFile();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        File file = new File("data/test.txt");
+        System.out.println(file.length());
+
         }
-    }
 
     public static void print(File file) {
         if (file.isDirectory()) {
