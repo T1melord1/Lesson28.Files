@@ -5,11 +5,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-       Files.readAllLines(Path.of("data/test.txt"));
+        try {
+            List<String> strings = Files.readAllLines(Path.of("data/test.txt"));
+            strings.forEach(System.out::println);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
