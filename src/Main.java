@@ -13,7 +13,7 @@ public class Main {
 
         try {
             Files.walk(Path.of("D:\\Projects\\git\\Lesson 28 Files"))
-                    .forEach(p -> System.out.println(p.toFile().getAbsolutePath()));
+                    .map(p -> p.toFile()).filter(f -> f.isFile()).forEach(f -> System.out.println(f));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
