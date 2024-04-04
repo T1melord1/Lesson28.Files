@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            Files.copy(Path.of("data/test.txt"), Path.of("data/test2.txt"));
+            Files.walk(Path.of("D:\\Projects\\git\\Lesson 28 Files"))
+                    .forEach(p -> System.out.println(p.toFile().getAbsolutePath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
