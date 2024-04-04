@@ -1,11 +1,20 @@
 import java.io.File;
-import java.util.Date;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("D:\\Projects\\git\\Lesson 28 Files\\data\\test.txt");
-        System.out.println(file.isFile());
-        System.out.println(file.isDirectory());
+        File file = new File("D:\\Projects\\git\\Lesson 28 Files");
+        print(file);
 
     }
+
+    public static void print(File file) {
+        if (file.isDirectory()) {
+            Arrays.stream(file.listFiles()).forEach(f -> print(f));
+        }
+        if (file.isFile()) {
+            System.out.println(file.getAbsolutePath());
+        }
+    }
+
 }
