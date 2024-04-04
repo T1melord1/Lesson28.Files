@@ -3,9 +3,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("D:\\Projects\\git\\Lesson 28 Files");
-        print(file);
-
+        File file = new File("D:\\Projects\\git\\Lesson 28 Files\\data\\test");
+        file.mkdir();
     }
 
     public static void print(File file) {
